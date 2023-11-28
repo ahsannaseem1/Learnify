@@ -53,13 +53,7 @@ export default function RegisterStudent() {
   };
 
   const signUp = async () => {
-    // signIn('abdullah123456@gmail.com', '123456').then(({ data, error }) => {
-    //   if (data) {
-    //     console.log('User data:', data);
-    //   } else {
-    //     console.error('Error signing in:', error);
-    //   }
-    // });
+ 
 
     try {
       if (
@@ -258,7 +252,7 @@ export default function RegisterStudent() {
 
         <View style={{ flex: 0.05, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 50 }}>
           <TouchableOpacity onPress={handleSubmit}>
-            <View style={{ backgroundColor: '#06161C', borderRadius: 5, width: 315, height: 35, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ backgroundColor: '#06161C', borderRadius: 15, width: 315, height: 35, alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ color: 'white', textAlign: 'center', }}>Sign Up</Text>
             </View>
           </TouchableOpacity>

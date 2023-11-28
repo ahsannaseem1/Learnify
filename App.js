@@ -19,87 +19,89 @@ export default function App() {
 
   const Stack = createNativeStackNavigator();
 
- 
-  
+
+
   return (
     <NavigationContainer>
-    <Stack.Navigator >
-
-    <Stack.Screen 
-      name="Intro" 
-      component={Intro}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="Login" 
-      component={Login}
-      options={{
-        headerShown:false
-      }}
-    />
-     <Stack.Screen 
-      name="SignUpOption" 
-      component={SignUpOption}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="RegisterStudent" 
-      component={RegisterStudent}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="Home" 
-      component={Home}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="Messages" 
-      component={Messages}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="ChatScreen" 
-      component={ChatScreen}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="UserProfile" 
-      component={UserProfile}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="Profile" 
-      component={Profile}
-      options={{
-        headerShown:false
-      }}
-    />
-    <Stack.Screen 
-      name="NewPassword" 
-      component={NewPassword}
-      options={{
-        headerShown:false
-      }}
-    />
-   
+      <Stack.Navigator >
 
 
-    </Stack.Navigator>
-  </NavigationContainer>
+        <Stack.Screen
+          name="Intro"
+          component={Intro}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="SignUpOption"
+          component={SignUpOption}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="RegisterStudent"
+          component={RegisterStudent}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Messages"
+          component={Messages}
+          options={{
+            headerShown: false
+          }}
+        />
+
+        <Stack.Screen
+          name="ChatScreen"
+          component={ChatScreen}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="UserProfile"
+          component={UserProfile}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="NewPassword"
+          component={NewPassword}
+          options={{
+            headerShown: false
+          }}
+        />
+
+
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

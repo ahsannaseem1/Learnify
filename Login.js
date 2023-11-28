@@ -120,7 +120,7 @@ export default function Login() {
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                         <Image
                             style={{ width: '100%', height: '100%' }}
-                            source={require('./images/MyLogo.png')}
+                            source={require('./images/login01.png')}
                         /></View>
 
 
@@ -130,8 +130,9 @@ export default function Login() {
 
 
                 <View style={{ flex: 0.40, alignItems: 'center', justifyContent: 'center', }}>
-                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginBottom: 50 }}>
-                        <Text style={styles.title}>Login</Text>
+                    <View style={{ flex: 1, marginBottom: 40,alignItems:'center',justifyContent:'center', }}>
+                        <Text style={styles.title}>Sign In</Text>
+                        <Text style={{marginTop:8,}}>Sign in with your email and password</Text>
                     
                     </View>
 
@@ -140,7 +141,7 @@ export default function Login() {
                     <View>
 
                         <TextInput
-                            style={{ width: 200, height: 35, borderRadius: 5, paddingLeft: 10, borderBottomWidth: 1, }}
+                            style={{ width: 250, height: 35, borderRadius: 5, paddingLeft: 10, borderBottomWidth: 1, }}
                             placeholder='Email'
                             placeholderTextColor='#364c59'
                             onChangeText={(text) => handleChange("email", text)}
@@ -149,7 +150,7 @@ export default function Login() {
                         <View>
                             <TextInput
                                 style={{
-                                    width: 200,
+                                    width: 250,
                                     height: 35,
                                     marginTop: 20,
                                     borderRadius: 5,
@@ -176,14 +177,17 @@ export default function Login() {
                                     <FontAwesome name="eye-slash" size={15} />
                                 )}
                             </TouchableOpacity>
-                            {error && <Text style={{ color: "#ED2B2A" }}>{error}</Text>}
+                            
 
                         </View>
 
                         <TouchableOpacity>
-                            <Text style={{ marginTop: 6, fontSize: 11, textDecorationLine: 'underline', textAlign: 'right' }}>Forget Password?</Text>
+                            <Text style={{ marginTop: 10, fontSize: 11, textDecorationLine: 'underline', textAlign: 'right' }}>Forgot Password?</Text>
                         </TouchableOpacity>
+                        {error && <Text style={{ color: "#e01f50", }}>{error}</Text>}
+                       
                     </View>
+                    
 
 
 
@@ -193,7 +197,7 @@ export default function Login() {
 
                 <View style={{ flex: 0.20, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
                     <TouchableOpacity onPress={handleSubmit}>
-                        <View style={{ backgroundColor: '#06161C', borderRadius: 20, width: 200, height: 35, alignItems: 'center', justifyContent: 'center' }}>
+                        <View style={{ backgroundColor: '#06161C', borderRadius: 15, width: 250, height: 35, alignItems: 'center', justifyContent: 'center' }}>
                             <Text style={{ color: 'white', textAlign: 'center' }}>Login</Text>
                         </View>
                     </TouchableOpacity>

@@ -38,8 +38,8 @@ export default function Intro() {
 
                 <View style={{ flex: 0.40, alignItems: 'center', justifyContent: 'center', marginTop: 80 }}>
 
-                    <Text style={styles.title}>Welcome to <Text style={{ color: '#e01f50' }}>Learnify!</Text></Text>
-                    <Text style={{ width: '75%', textAlign: 'center', fontSize: 15, color: 'white' }}>Connect with expert teachers, book online sessions, and unlock your potential with Learnify.</Text>
+                    <Text style={styles.title}>Welcome to <Text style={{ color: 'white' }}>Learnify!</Text></Text>
+                    <Text style={{ width: '75%', textAlign: 'center', fontSize: 16, color: 'white' }}>Connect with expert teachers, book online sessions, and unlock your potential with Learnify.</Text>
 
 
 
@@ -49,13 +49,13 @@ export default function Intro() {
 
 
 
-            <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{ flex: 0.2, alignItems: 'center', justifyContent: 'center'}}>
                 <TouchableOpacity onPress={loginHandle}>
-                    <View style={{ backgroundColor: '#06161C', borderRadius: 20, width: 300, height: 40, alignItems: 'center', justifyContent: 'center',marginTop:40 }}>
+                    <View style={{ backgroundColor: '#06161C', borderRadius: 15, width: 300, height: 40, alignItems: 'center', justifyContent: 'center',marginTop:40 }}>
                         <Text style={{ color: 'white', textAlign: 'center' }}>Get Started</Text>
                     </View>
                 </TouchableOpacity>
-                <View style={{ flex: 0.35, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{ flex: 0.45, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text >Don't have an account?</Text>
                     <TouchableOpacity
                         onPress={signUpHandle}>

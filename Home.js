@@ -49,13 +49,17 @@ export default function Home() {
   const [selectedIcon, setSelectedIcon] = useState('home');
 
   const route = useRoute();
-const name=route.params.name;
+  const name=route.params.name;
   const navigation = useNavigation();
 
   const profileHandle = () => {
 
+    navigation.navigate('Profile')
+  }
+  const userProfileHandle = () => {
     navigation.navigate('UserProfile')
   }
+
   const messagesHandle = () => {
 
     navigation.navigate('Messages')
@@ -168,6 +172,7 @@ const name=route.params.name;
             <FontAwesome
               name="gear"
               size={25}
+              onPress={profileHandle}
               style={{ color: selectedIcon === 'gear' ? '#e01f50' : 'white' }}
             />
           </TouchableOpacity>
@@ -178,7 +183,7 @@ const name=route.params.name;
             <FontAwesome
               name="user"
               size={25}
-              onPress={profileHandle}
+              onPress={userProfileHandle}
               style={{ color: selectedIcon === 'user' ? '#e01f50' : 'white' }}
             />
           </TouchableOpacity>
