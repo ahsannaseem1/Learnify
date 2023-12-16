@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, Alert, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Image, Alert, KeyboardAvoidingView, TouchableOpacity,TouchableWithoutFeedback,Keyboard,ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import Icon from 'react-native-ico-material-design';
 import { FontAwesome } from '@expo/vector-icons';
 import { SignIn } from "./Firebase/SignIn";
+import { Entypo } from '@expo/vector-icons'; 
+
 
 
 
@@ -108,20 +110,24 @@ export default function Login() {
       };
 
     return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : null}
             style={{ flex: 1 }}
             keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0}
         >
+            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
+           
             <View style={{ flex: 1, backgroundColor: 'white' }}>
 
-                <View style={{ flex: 0.50 }}>
+            <View style={{ flex: 0.55 }}>
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                         <Image
                             style={{ width: '100%', height: '100%' }}
                             source={require('./images/login01.png')}
-                        /></View>
+                        />
+                        </View>
 
 
                 </View>
@@ -129,21 +135,21 @@ export default function Login() {
 
 
 
-                <View style={{ flex: 0.40, alignItems: 'center', justifyContent: 'center', }}>
-                    <View style={{ flex: 1, marginBottom: 40,alignItems:'center',justifyContent:'center', }}>
-                        <Text style={styles.title}>Sign In</Text>
-                        <Text style={{marginTop:8,}}>Sign in with your email and password</Text>
+                <View style={{ flex: 0.65, alignItems: 'center', justifyContent: 'center',backgroundColor:'#092636',borderStartStartRadius:50,borderStartEndRadius:50,}}>
+                    <View style={{ flex: 0.3,alignItems:'left',justifyContent:'center',marginTop:20}}>
+                        <Text style={styles.title}>Login</Text>
+                        <Text style={{marginTop:10,color:'white'}}>Login with your email and password</Text>
                     
                     </View>
 
 
 
-                    <View>
+                    <View style= {{flex:0.45,marginTop:50,}}>
 
                         <TextInput
-                            style={{ width: 250, height: 35, borderRadius: 5, paddingLeft: 10, borderBottomWidth: 1, }}
+                            style={{ width: 250, height: 35, borderRadius: 5, paddingLeft: 10, borderBottomWidth: 1,borderColor:'white',color: 'white'}}
                             placeholder='Email'
-                            placeholderTextColor='#364c59'
+                            placeholderTextColor="#e3e3e3"
                             onChangeText={(text) => handleChange("email", text)}
               value={formData.email}
                         />
@@ -156,9 +162,11 @@ export default function Login() {
                                     borderRadius: 5,
                                     paddingLeft: 10,
                                     borderBottomWidth: 1,
+                                    borderColor:'white',
+                                    color: 'white'
                                 }}
                                 placeholder="Password"
-                                placeholderTextColor="#364c59"
+                                placeholderTextColor="#e3e3e3"
                                 secureTextEntry={!passwordVisible}
                                 onChangeText={(text) => handleChange("password", text)}
               value={formData.password}
@@ -172,9 +180,9 @@ export default function Login() {
                                 }}
                             >
                                 {passwordVisible ? (
-                                    <FontAwesome name="eye" size={15} />
+                                    <FontAwesome name="eye" size={15} color="white" />
                                 ) : (
-                                    <FontAwesome name="eye-slash" size={15} />
+                                    <FontAwesome name="eye-slash" size={15} color="white"/>
                                 )}
                             </TouchableOpacity>
                             
@@ -182,11 +190,32 @@ export default function Login() {
                         </View>
 
                         <TouchableOpacity>
-                            <Text style={{ marginTop: 10, fontSize: 11, textDecorationLine: 'underline', textAlign: 'right' }}>Forgot Password?</Text>
+                            <Text style={{ marginTop: 10, fontSize: 11, textDecorationLine: 'underline', textAlign: 'right',color:'white' }}>Forgot Password?</Text>
                         </TouchableOpacity>
                         {error && <Text style={{ color: "#e01f50", }}>{error}</Text>}
                        
                     </View>
+
+
+                    
+
+                <View style={{ flex: 0.15,  flexDirection: 'row'}}>
+                    <TouchableOpacity onPress={handleSubmit}>
+                        <View style={{ backgroundColor: 'white', borderRadius: 15, width: 250, height: 35, alignItems: 'center', justifyContent: 'center',flexDirection:'row' }}>
+                        <Entypo name="login" size={15} color="black" />  
+                        <Text style={{ color: 'black', textAlign: 'center',marginLeft:5,fontSize:15 }}>Login</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={{ flex: 0.25, flexDirection: 'row', }}>
+                    <Text style={{color:'white'}}>Don't have an account?</Text>
+                    <TouchableOpacity
+                        onPress={signUprHandle}>
+                        <Text style={{ color: '#e01f50', marginLeft: 5, fontWeight: 'bold', textDecorationLine: 'underline' }} >Sign Up</Text>
+                    </TouchableOpacity>
+
+                </View>
                     
 
 
@@ -195,25 +224,11 @@ export default function Login() {
 
 
 
-                <View style={{ flex: 0.20, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={handleSubmit}>
-                        <View style={{ backgroundColor: '#06161C', borderRadius: 15, width: 250, height: 35, alignItems: 'center', justifyContent: 'center' }}>
-                            <Text style={{ color: 'white', textAlign: 'center' }}>Login</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={{ flex: 0.10, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>
-                    <Text >Don't have an account?</Text>
-                    <TouchableOpacity
-                        onPress={signUprHandle}>
-                        <Text style={{ color: '#e01f50', marginLeft: 5, fontWeight: 'bold', textDecorationLine: 'underline' }} >Sign Up</Text>
-                    </TouchableOpacity>
-
-                </View>
-
             </View>
+            </ScrollView>
+
         </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
     );
 }
 
@@ -228,7 +243,7 @@ const styles = StyleSheet.create({
     title: {
         // fontFamily: 'Montserrat',
         fontSize: 35, fontWeight: 'bold',
-        marginTop:25
+        color:'white'
     },
 
 });

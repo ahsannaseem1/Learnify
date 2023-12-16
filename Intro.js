@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, Alert, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import { Feather } from '@expo/vector-icons';
 
 export default function Intro() {
 
@@ -51,8 +52,9 @@ export default function Intro() {
 
             <View style={{ flex: 0.2, alignItems: 'center', justifyContent: 'center'}}>
                 <TouchableOpacity onPress={loginHandle}>
-                    <View style={{ backgroundColor: '#06161C', borderRadius: 15, width: 300, height: 40, alignItems: 'center', justifyContent: 'center',marginTop:40 }}>
-                        <Text style={{ color: 'white', textAlign: 'center' }}>Get Started</Text>
+                    <View style={{ backgroundColor: '#06161C', borderRadius: 15, width: 250, height:35, alignItems: 'center', justifyContent: 'center',marginTop:40,flexDirection:'row' }}>
+                    <Feather name="arrow-right-circle" size={15} color="white" />
+                        <Text style={{ color: 'white', textAlign: 'center',marginLeft:5,fontSize:15 }}>Get Started</Text>
                     </View>
                 </TouchableOpacity>
                 <View style={{ flex: 0.45, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>

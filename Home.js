@@ -54,7 +54,7 @@ export default function Home() {
 
   const profileHandle = () => {
 
-    navigation.navigate('Profile')
+    navigation.navigate('TeacherProfile')
   }
   const userProfileHandle = () => {
     navigation.navigate('UserProfile')

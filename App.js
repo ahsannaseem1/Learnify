@@ -2,11 +2,12 @@ import Intro from './Intro'
 import Login from './Login';
 import Home from './Home';
 import RegisterStudent from './RegisterStudent';
-import Profile from './Profile';
+import TeacherProfile from './TeacherProfile';
 import UserProfile from './UserProfile';
 import NewPassword from './NewPassword';
 import Messages from './Messages';
 import SignUpOption from './SignUpOption';
+import BookNow from './BookNow';
 
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
@@ -84,8 +85,15 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Profile"
-          component={Profile}
+          name="TeacherProfile"
+          component={TeacherProfile}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="BookNow"
+          component={BookNow}
           options={{
             headerShown: false
           }}
